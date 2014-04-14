@@ -1,0 +1,145 @@
+ul{
+	list-style:none outside none;
+	text-decoration: none;
+	margin-top: -5px;
+}
+
+body{
+	background: url('/picture/poster/background.jpg' ) repeat scroll 
+}
+#navigation{
+	width:100%;
+	height: 100px;
+	background-color: #F2F7F6;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+
+#navigation h1{
+	text-align: center;
+	color :#202224;
+	font-size: 35px;
+	font-weight: bold;
+	padding-top:16px;
+	z-index: 20;
+
+}
+
+
+#navigation ul #about{
+	float:left;
+	margin-left:-25px;
+	margin-top:-71px;
+	text-decoration: none;
+	font-size: 24px;
+	padding:40px;
+	display:block;
+	background: none repeat scroll 0% 0% #14CCCC;
+}
+#navigation ul #about a{
+	color:#333;
+}
+#navigation ul #about a:hover{
+	color:#333;
+	text-decoration: none;
+	opacity: 0.7;
+
+}
+
+
+#navigation ul #about:hover{
+background: none repeat scroll 0% 0% #3FF;
+color:#333;
+text-decoration: none;
+cursor:pointer;
+
+}
+
+/*#navigation ul #about a:hover{
+text-decoration: none;
+background-color: #3FF;
+color:#333;
+}
+
+*/
+
+#triangle-topright{
+    width: 0;
+    height: 0;
+    border-top: 100px solid rgba(237, 83, 83, 1);
+    border-left: 130px solid transparent; 
+    margin-left:20px;
+    margin-top:-76px;
+    float:right;
+    cursor: pointer;
+}
+
+#test{
+	position: absolute;
+	right:5px;
+	top:24px;
+	font-size: 23px;
+	font-weight: 700;
+	cursor: pointer;
+	color:white;
+	-moz-transform: rotate(38deg);
+	-webkit-transform: rotate(38deg);
+	/*filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);*/
+}
+
+#triangle-topright:hover{
+    border-top: 100px solid #FFFF66;
+}
+
+
+
+div#introduction{
+	text-align: center;
+	position: relative;
+	top:200px;
+	font-size:22px;
+}
+
+div#alert{
+	text-align: center;
+	position: relative;
+	top:255px;
+	font-size:22px;
+}
+
+div#alert_shutdown{
+	text-align: center;
+	position: relative;
+	top:300px;
+	font-size:22px;
+
+}
+input#focusedInput{
+	position: relative;
+	top:240px;
+	width:510px;
+	height: 30px;
+}
+
+.form-horizontal .controls{
+	margin:auto; 
+}
+
+#next_button{
+	position: relative;
+	top:300px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

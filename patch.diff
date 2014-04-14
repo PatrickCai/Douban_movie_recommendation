@@ -1,0 +1,29 @@
+diff --git a/django_test/database/database.py b/django_test/database/database.py
+index 1840491..4a05d4a 100644
+--- a/django_test/database/database.py
++++ b/django_test/database/database.py
+@@ -11,8 +11,8 @@ sys.setdefaultencoding('utf-8')
+ 
+ host = 'localhost'
+ user = 'root'
+-passwd = '56038824a'
+-# passwd = ''
++# passwd = '56038824a'
++passwd = ''
+ db = 'recommendation'
+ port = 3306
+ 
+diff --git a/django_test/django_test/settings.py b/django_test/django_test/settings.py
+index 1c22de0..1be95fe 100644
+--- a/django_test/django_test/settings.py
++++ b/django_test/django_test/settings.py
+@@ -61,7 +61,8 @@ DATABASES = {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'recommendation',
+         'USER': 'root',             
+-        'PASSWORD': '56038824a',                  
++        # 'PASSWORD': '56038824a',                  
++        'PASSWORD': '',                  
+         'HOST': 'localhost',                     
+         'PORT': 3306,  
+     }

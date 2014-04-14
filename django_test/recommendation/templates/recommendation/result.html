@@ -1,0 +1,85 @@
+<html>
+<head>
+	<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
+	<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.min.css" rel="stylesheet">
+	<script src="/static/js/bootstrap-tooltip.js"></script>
+	<script src="/static/js/bootstrap-popover.js"></script>
+	<script src="/static/js/result.js"></script>
+	<link href='/static/css/result.css' rel='stylesheet'>
+	<title>{{movie.name}}</title>
+	<p display='hidden' id='page'>{{page}}</p>
+</head>
+		<body>
+			<div id='navigation'>
+				<h1>给你的推荐</h1>
+				<ul>
+					<li id='about'>
+						<a href='http://www.patrickcai.com/me'>关于</a>
+					</li>
+					<li id='triangle-topright'>
+						<div id='test'  href='http://www.patrickcai.com/douban_movie_recommendation'>more!</div>
+					</li>
+					<div>
+					</div>
+				</ul>
+			</div>
+			<div id='intro' class='span2 offset1'>
+					<p id='star_title'>评分:</p>
+				<div id='star'>
+					{{movie.star}}
+				</div>
+				<div id='poster_div'>
+				<a href='http://movie.douban.com/subject/{{movie.ID}}' target='_blank'>
+					<img id='poster' src='{{movie.poster_url}}'/>
+				</a>
+			</div>
+				<div id='movie_name'>
+					{{movie.name}}
+				</div>
+			</div>
+			<div id='celebrity' class='span6 offset4'>
+				<div id='director'>
+					{% with movie.celebrities|last as last%}
+					{% if 'director' in last.role%}
+					<p class='role'>你喜欢的导演:</p>
+					{% endif %}
+					{% endwith %}
+					<ul class='cele'>
+						{% for director in movie.celebrities%}
+						{% if 'director' in director.role%}
+						<li class='pop_over'  data-content='{{director.movies}}' data-original-title='你喜欢的电影' >
+						<img  class='people' src='{{director.image_url}}'/>
+						<a href='http://movie.douban.com/celebrity/{{director.ID}}' target='_blank'>
+							<p>{{director.name}}</p>
+						</a>
+							</li>
+						{% endif %}
+						{% endfor %}
+					</ul>
+				</div>
+				<div id='performer'>
+					<p class='role'>你喜欢的演员:</p>
+					<ul class='cele'> 
+						{% for performer in movie.celebrities %}
+						{% if 'performer' in performer.role%}
+						<li class='pop_over'  data-content='{{performer.movies}}'  data-original-title='你喜欢的电影' >
+							<img  class='people' src='{{performer.image_url}}'/>
+						<a href='http://movie.douban.com/celebrity/{{performer.ID}}' target='_blank'>
+							<p>{{performer.name}}</p>
+						</a>
+						</li>
+						{%endif%}
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+			{% if movie.comment.name%}
+			<div id='comment' class='span8' >
+				<p class='comma' id='comma_left'>‘‘</p><q  id='content'>{{movie.comment.name}}</q><p id='comma_right' class='comma'>’’</p>
+				<div id='author'>{{movie.comment.author}}</div>
+			</div>
+			{% endif %}
+			<a id='last' >← Prev</a>
+			<a id='next' >Next →</a>
+		</body>
+	</html>
